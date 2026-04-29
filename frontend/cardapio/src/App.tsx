@@ -18,12 +18,13 @@ function App() {
       <h1>Cardápio</h1>
       <div className="card-grid">
         {data?.map(foodData =>
-          <Card
-            key={foodData.id}
-            price={foodData.price}
-            title={foodData.title}
-            image={foodData.image}
-          />
+            <Card
+                key={foodData.id}
+                id={foodData.id}
+                price={foodData.price}
+                title={foodData.title}
+                image={foodData.image}
+            />
         )}
       </div>
         {isModalOpen && <CreateModal closeModal={handleOpenModal}/>}

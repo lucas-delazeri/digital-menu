@@ -8,6 +8,10 @@ const postData = async (data: FoodData): AxiosPromise<any> => {
     return axios.post(API_URL + '/food', data);
 }
 
+const deleteData = async (id: number): AxiosPromise<any> => {
+    return axios.delete(`${API_URL}/food/${id}`)
+}
+
 export function useFoodDataMutate() {
     const queryClient = useQueryClient();
 
@@ -22,4 +26,17 @@ export function useFoodDataMutate() {
     });
 
     return mutate;
+}
+
+export function useFoodDataDelete() {
+    const queryClient = useQueryClient();
+
+    return useMutation({
+        mutationFn: deleteData,
+        onSuccess: () => {
+            queryClient.invalidateQueries({
+                queryKey: ['food-data']
+            });
+        }
+    });
 }
