@@ -48,8 +48,11 @@ export function CreateModal({ closeModal }: ModalProps) {
     }, [isSuccess])
 
     return (
-        <div className="modal-overlay">
-            <div className="modal-body">
+        <div className="modal-overlay" onClick={closeModal}>
+            <div
+                className="modal-body"
+                onClick={(e) => e.stopPropagation()}
+            >
                 <h2>Cadastre um novo item no cardápio</h2>
 
                 <form className="input-container">
