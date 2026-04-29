@@ -12,25 +12,46 @@
     margin-bottom: 62px;
     color: #273147;
 }
-  
+
 .card-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
 }
-  
-.container button {
+
+.add-button {
     background-color: #0275d8;
     color: white;
     font-weight: bold;
     position: fixed;
     bottom: 16px;
     right: 24px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
     transition: all 0.1s linear 0.1s;
 }
-  
-.container button:hover {
+
+.add-button:hover {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
     transform: scale(1.1);
 }
-  
+
+.new-item {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 12px;
+    border: none;
+    background-color: #0275d8;
+    color: white;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.new-item:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 7px 0px;
+}
